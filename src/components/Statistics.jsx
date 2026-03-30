@@ -292,7 +292,7 @@ export default function Statistics() {
               </div>
 
               <div className="mt-auto pt-4 opacity-50 text-[10px] font-mono tracking-widest text-[#a1a1aa]">
-                github.com/patrykso/cv-tracker
+                patrykso.github.io/cv-tracker
               </div>
             </div>
           </div>

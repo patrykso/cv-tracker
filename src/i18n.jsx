@@ -16,7 +16,7 @@ const en = {
   colStatus: 'Status',
   colApplied: 'Applied',
   colActivity: 'Last Activity',
-  noApps: 'No applications found. Add your first space voyage!',
+  noApps: 'No applications found. Add your first application.',
   
   companyLabel: 'Company',
   companyPlaceholder: 'e.g. Amazon',

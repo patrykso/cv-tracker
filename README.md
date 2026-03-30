@@ -2,6 +2,8 @@
 
 This is a free web app that allows you to track your job applications. It's 100% free and private - all data is saved in your browser.
 
+[Click here to start using the app](https://patrykso.github.io/cv-tracker/)
+
 Made as one-evening fun project to get familiar with Google's Antigravity and help few of my friends.
 
 Developed mainly with React, Vite, Tailwind and Dexie.js.
