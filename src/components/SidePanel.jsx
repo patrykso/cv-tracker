@@ -94,6 +94,30 @@ export default function SidePanel({ appId, isOpen, onClose }) {
               <div className={activeTab === 'details' ? 'space-y-6' : 'hidden'}>
                 <div>
                   <label className="flex items-center gap-2 text-xs font-bold text-zinc-600 dark:text-zinc-400 uppercase mb-2">
+                    <Building2 size={14} /> {t('companyLabel')}
+                  </label>
+                  <input 
+                    type="text" 
+                    value={app.company || ''} 
+                    onChange={e => updateAppField('company', e.target.value)}
+                    placeholder={t('companyPlaceholder')}
+                    className="w-full p-3 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm outline-none focus:border-indigo-500 transition-colors font-medium"
+                  />
+                </div>
+                <div>
+                  <label className="flex items-center gap-2 text-xs font-bold text-zinc-600 dark:text-zinc-400 uppercase mb-2">
+                    <Activity size={14} /> {t('positionLabel')}
+                  </label>
+                  <input 
+                    type="text" 
+                    value={app.position || ''} 
+                    onChange={e => updateAppField('position', e.target.value)}
+                    placeholder={t('positionPlaceholder')}
+                    className="w-full p-3 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm outline-none focus:border-indigo-500 transition-colors font-medium"
+                  />
+                </div>
+                <div>
+                  <label className="flex items-center gap-2 text-xs font-bold text-zinc-600 dark:text-zinc-400 uppercase mb-2">
                     <Calendar size={14} /> {t('dateApplied')}
                   </label>
                   <input 
