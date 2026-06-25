@@ -48,6 +48,8 @@ const en = {
   dateApplied: 'Date Applied',
   descriptionPlaceholder: 'Paste full job description here...',
   noAppSelected: 'Select an application to view details',
+  deleteApp: 'Delete Application',
+  confirmDeleteApp: 'Are you sure you want to delete this application? This action cannot be undone.',
   
   dropFiles: 'Choose a file or drag & drop it here',
   fileLimit: 'PDF, DOC up to 5MB',
@@ -162,6 +164,8 @@ const pl = {
   dateApplied: 'Data wysłania',
   descriptionPlaceholder: 'Wklej tutaj pełny opis oferty pracy...',
   noAppSelected: 'Wybierz aplikację, aby zobaczyć szczegóły',
+  deleteApp: 'Usuń aplikację',
+  confirmDeleteApp: 'Czy na pewno chcesz usunąć tę aplikację? Tej operacji nie można cofnąć.',
   
   dropFiles: 'Wybierz plik lub przeciągnij go tutaj',
   fileLimit: 'PDF, DOC do 5MB',

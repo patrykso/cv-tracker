@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db, useConfig, getStatusColors, getDisplayName } from '../db';
-import { X, Building2, DollarSign, Link as LinkIcon, User, Calendar, FileText, Paperclip, Activity, Clock } from 'lucide-react';
+import { X, Building2, DollarSign, Link as LinkIcon, User, Calendar, FileText, Paperclip, Activity, Clock, Trash2 } from 'lucide-react';
 import { cn } from '../utils';
 import { useTranslation } from '../i18n';
 import Timeline from './Timeline';
@@ -24,6 +24,16 @@ export default function SidePanel({ appId, isOpen, onClose }) {
   const updateAppField = async (field, value) => {
     if (!appId) return;
     await db.applications.update(appId, { [field]: value, lastUpdate: new Date().toISOString() });
+  };
+
+  const handleDelete = async () => {
+    if (!appId) return;
+    if (confirm(t('confirmDeleteApp'))) {
+      await db.applications.delete(appId);
+      await db.stages.where('appId').equals(appId).delete();
+      await db.files.where('appId').equals(appId).delete();
+      onClose();
+    }
   };
 
   const TABS = [
@@ -179,6 +189,17 @@ export default function SidePanel({ appId, isOpen, onClose }) {
                     placeholder={t('contactPlaceholder')}
                     className="w-full p-3 bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm outline-none focus:border-indigo-500 transition-colors font-medium"
                   />
+                </div>
+                
+                <div className="pt-6 border-t border-zinc-200 dark:border-zinc-800/80 flex justify-end">
+                  <button
+                    type="button"
+                    onClick={handleDelete}
+                    className="flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-bold text-red-500 hover:text-white border border-red-500/30 hover:border-red-600 bg-red-500/10 hover:bg-red-600 rounded-xl transition-all shadow-sm cursor-pointer"
+                  >
+                    <Trash2 size={16} />
+                    {t('deleteApp')}
+                  </button>
                 </div>
               </div>
 
